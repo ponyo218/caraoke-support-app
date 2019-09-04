@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    {% for song in songs %}
+        <div class="song">
+            <h1><a href="">{{ song.title }}</a></h1>
+            <div class="singer">
+                {{ song.singer }}
+            </div>
+            <p>{{ song.lyrics|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{#{% load static %}#}
+{#<html>#}
+{#    <head>#}
+{#        <title>Django Girls blog</title>#}
+{#        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">#}
+{#        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">#}
+{#        <link rel="stylesheet" href="{% static 'css/blog.css' %}">#}
+{#    </head>#}
+{#    <body>#}
+{#        <div>#}
+{#            <h1><a href="/">Django Girls Blog</a></h1>#}
+{#        </div>#}
+{##}
+{#        {% for post in posts %}#}
+{#            <div>#}
+{#                <p>published: {{ post.published_date }}</p>#}
+{#                <h1><a href="">{{ post.title }}</a></h1>#}
+{#                <p>{{ post.text|linebreaksbr }}</p>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </body>#}
+{#</html>#}
