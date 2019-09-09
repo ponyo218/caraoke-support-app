@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div class="song">
+        <h1>{{ song.title }}</h1>
+        <div class="singer">
+            {{ song.singer }}
+        </div>
+        {% if song.lyrics %}
+            <p>{{ song.lyrics|linebreaksbr }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
