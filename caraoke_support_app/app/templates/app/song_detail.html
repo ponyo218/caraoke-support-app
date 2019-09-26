@@ -9,5 +9,6 @@
         {% if song.lyrics %}
             <p>{{ song.lyrics|linebreaksbr }}</p>
         {% endif %}
+        <a class="btn btn-default" href="{% url 'scraping' pk=song.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     </div>
 {% endblock %}

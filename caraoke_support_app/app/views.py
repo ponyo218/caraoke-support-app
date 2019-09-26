@@ -3,7 +3,9 @@ from .models import Song, Singer
 import json
 from django.http import HttpResponse
 import requests
-
+from urllib import request
+from bs4 import BeautifulSoup
+import time
 
 def all_song(request):
     songs = Song.objects.order_by('title')
@@ -13,6 +15,14 @@ def all_song(request):
 
 def song_detail(request, pk):
     song = get_object_or_404(Song, pk=pk)
+    return render(request, 'app/song_detail.html', {'song': song})
+
+
+def scraping(request, pk):
+    song = get_object_or_404(Song, pk=pk)
+    # url
+    url = "http://j-lyric.net/artist/a05996f/l0482da.html"
+    song.scraping(url=url)
     return render(request, 'app/song_detail.html', {'song': song})
 
 
