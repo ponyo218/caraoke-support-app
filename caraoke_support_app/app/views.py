@@ -7,15 +7,28 @@ from urllib import request
 from bs4 import BeautifulSoup
 import time
 
+
 def all_song(request):
     songs = Song.objects.order_by('title')
-    print('all_song')
     return render(request, 'app/all_song.html', {'songs': songs})
+
+
+def all_singer(request):
+    singers = Singer.objects.order_by('name')
+    print("all_singer")
+    return render(request, 'app/all_singer.html', {'singers': singers})
 
 
 def song_detail(request, pk):
     song = get_object_or_404(Song, pk=pk)
     return render(request, 'app/song_detail.html', {'song': song})
+
+
+def update(request, pk):
+    singer = get_object_or_404(Singer, pk=pk)
+    singer.update()
+    singers = Singer.objects.order_by('name')
+    return render(request, 'app/all_singer.html', {'singers': singers})
 
 
 def scraping(request, pk):

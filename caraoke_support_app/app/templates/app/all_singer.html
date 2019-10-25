@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    {% for singer in singers %}
+        <div class="singer">
+            <h1>{{ singer.name }}</h1>
+            <p>aaa</p>
+            <a href="{% url 'all_singer' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+    {% endfor %}
+{% endblock %}

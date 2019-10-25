@@ -6,4 +6,6 @@ urlpatterns = [
     path('song/<int:pk>/', views.song_detail, name='song_detail'),
     path('iTunes_search/', views.iTunes_search, name='iTunes_search'),
     path('song/<int:pk>/scraping/', views.scraping, name='scraping'),
+    path('singer/', views.all_singer, name='all_singer'),
+    path('singer/<int:pk>/update/', views.update, name='update'),
 ]

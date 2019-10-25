@@ -7,6 +7,10 @@ import time
 class Singer(models.Model):
     name = models.CharField(max_length=100)
 
+    def update(self):#歌手の曲をBSで拾ってきてデータベースに無い曲なら新しく作り、各々に対してscrapingする
+
+        return
+
     def __str__(self):
         return self.name
 
